@@ -1,8 +1,9 @@
 "use client";
 import { useState } from "react";
 import { useSnapshot } from "valtio";
-import Player from "../components/player/Player";
+import Player from "../components/Player";
 import { state } from "../va;tio/state";
+import Navbar from "../components/Navbar";
 
 export default function Home() {
   const snap = useSnapshot(state);
@@ -17,6 +18,7 @@ export default function Home() {
       {[...Array(snap.playerCount)].map((player) => (
         <Player />
       ))}
+      <Navbar />
     </main>
   );
 }
