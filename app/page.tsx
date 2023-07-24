@@ -2,6 +2,7 @@
 import React from "react";
 import { useSnapshot } from "valtio";
 import { state } from "./va;tio/state";
+import Link from "next/link";
 
 type pageProps = {};
 
@@ -9,40 +10,44 @@ const page: React.FC<pageProps> = () => {
   const snap = useSnapshot(state);
   return (
     <div className="bg-blue-400 h-screen w-screen flex flex-col items-center justify-center gap-4">
-      <h2 className="text-3xl font-bold">Player Count {snap.playerCount}</h2>
+      <h2 className="text-3xl font-bold">Player Count</h2>
       <div className="flex justify-center items-center gap-8">
-        <button
+        <Link
+          href="/main"
           onClick={() => {
             state.playerCount = 1;
           }}
           className="bg-gray-200 p-8 rounded-lg shadow-md hover:bg-gray-300"
         >
           1
-        </button>
-        <button
+        </Link>
+        <Link
+          href="/main"
           onClick={() => {
             state.playerCount = 2;
           }}
           className="bg-gray-200 p-8 rounded-lg shadow-md hover:bg-gray-300"
         >
           2
-        </button>
-        <button
+        </Link>
+        <Link
+          href="/main"
           onClick={() => {
             state.playerCount = 3;
           }}
           className="bg-gray-200 p-8 rounded-lg shadow-md hover:bg-gray-300"
         >
           3
-        </button>
-        <button
+        </Link>
+        <Link
+          href="/main"
           onClick={() => {
             state.playerCount = 4;
           }}
           className="bg-gray-200 p-8 rounded-lg shadow-md hover:bg-gray-300"
         >
           4
-        </button>
+        </Link>
       </div>
     </div>
   );
