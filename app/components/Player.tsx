@@ -1,11 +1,12 @@
 "use client";
 import React, { useState } from "react";
 
-type PlayerProps = {};
+type PlayerProps = {
+  playerNumber: number;
+};
 
-const Player: React.FC<PlayerProps> = () => {
+const Player: React.FC<PlayerProps> = ({ playerNumber }) => {
   const [lore, setLore] = useState(0);
-  const [playerName, setPlayerName] = useState("");
 
   const loreCountHandler = (x: number) => {
     if (lore + x < 0 || lore + x > 20) return;
@@ -22,8 +23,12 @@ const Player: React.FC<PlayerProps> = () => {
       >
         -
       </button>
-      <div className="h-full w-full flex flex-col justify-center items-center">
-        <h3>{playerName ? playerName : "Player 1"}</h3>
+      <div className="h-full w-full flex flex-col justify-center items-center gap-4">
+        <input
+          type="text"
+          placeholder={`Player ${playerNumber + 1}`}
+          className="text-center placeholder-black z-20"
+        />
         <p>{lore}</p>
       </div>
       <button

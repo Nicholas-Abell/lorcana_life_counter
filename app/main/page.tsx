@@ -15,8 +15,8 @@ export default function Home() {
           : `grid grid-rows-2 w-screen h-screen`
       }
     >
-      {[...Array(snap.playerCount)].map((player) => (
-        <Player />
+      {[...Array(snap.playerCount)].map((player, key) => (
+        <Player playerNumber={key}/>
       ))}
       <Navbar />
     </main>
