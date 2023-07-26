@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useSnapshot } from "valtio";
 import Player from "../components/Player";
-import { state } from "../va;tio/state";
+import { state } from "../valtio/state";
 import Navbar from "../components/Navbar";
 
 export default function Home() {

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { useSnapshot } from "valtio";
-import { state } from "../va;tio/state";
+import { state } from "../valtio/state";
 
 type PlayerProps = {
   playerNumber: number;

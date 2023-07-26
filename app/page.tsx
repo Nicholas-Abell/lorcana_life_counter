@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { useSnapshot } from "valtio";
-import { state } from "./va;tio/state";
+import { state } from "./valtio/state";
 import Link from "next/link";
 
 type pageProps = {};
