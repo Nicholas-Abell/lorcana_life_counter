@@ -12,11 +12,13 @@ export default function Home() {
       className={
         snap.playerCount > 2
           ? `grid grid-cols-2 w-screen h-screen`
+          : snap.playerCount === 1
+          ? "w-screen h-screen"
           : `grid grid-rows-2 w-screen h-screen`
       }
     >
       {[...Array(snap.playerCount)].map((player, key) => (
-        <Player playerNumber={key}/>
+        <Player playerNumber={key} />
       ))}
       <Navbar />
     </main>
