@@ -30,7 +30,7 @@ const page: React.FC<pageProps> = () => {
         >
           2
         </Link>
-        <Link
+        {/* <Link
           href="/main"
           onClick={() => {
             state.playerCount = 3;
@@ -38,7 +38,7 @@ const page: React.FC<pageProps> = () => {
           className="bg-gray-200 p-8 rounded-lg shadow-md hover:bg-gray-300"
         >
           3
-        </Link>
+        </Link> */}
         <Link
           href="/main"
           onClick={() => {

@@ -1,11 +1,15 @@
 "use client";
 import React, { useState } from "react";
+import { useSnapshot } from "valtio";
+import { state } from "../va;tio/state";
 
 type PlayerProps = {
   playerNumber: number;
 };
 
 const Player: React.FC<PlayerProps> = ({ playerNumber }) => {
+  const snap = useSnapshot(state);
+
   const [lore, setLore] = useState(0);
 
   const loreCountHandler = (x: number) => {
@@ -14,7 +18,11 @@ const Player: React.FC<PlayerProps> = ({ playerNumber }) => {
   };
 
   return (
-    <div className="bg-blue-400 w-full h-full border-gray-600 border-2 relative">
+    <div
+      className={`bg-blue-400 w-full h-full border-gray-600 border-2 relative ${
+        playerNumber + 1 <= snap.playerCount / 2 ? "rotate-180" : ""
+      }`}
+    >
       <button
         onClick={() => {
           loreCountHandler(-1);
